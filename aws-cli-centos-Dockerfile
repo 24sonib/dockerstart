@@ -1,0 +1,6 @@
+FROM centos
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN yum install -y python-setuptools
+RUN easy_install  pip
+RUN pip install awscli --upgrade --user 
+RUN echo "export PATH=~/.local/bin:$PATH" >> /root/.bashrc && source /root/.bashrc
