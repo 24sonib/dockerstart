@@ -1,0 +1,7 @@
+FROM centos
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN yum install -y httpd
+RUN yum install -y net-tools 
+RUN echo 'redhat' | passwd --stdin root
+RUN systemctl enable httpd 
+RUN systemctl start httpd; /bin/bash 
