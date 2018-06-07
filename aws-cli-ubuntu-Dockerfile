@@ -1,6 +1,0 @@
-FROM ubuntu
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-RUN apt update
-RUN apt install -y  python-setuptools python-pip  bsdmainutils
-RUN pip install awscli --upgrade --user 
-RUN echo "export PATH=~/.local/bin:$PATH" >> /root/.bashrc && source /root/.bashrc
